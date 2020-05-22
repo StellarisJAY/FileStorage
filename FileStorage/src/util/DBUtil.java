@@ -2,9 +2,9 @@ package util;
 import java.sql.*;
 
 public class DBUtil {
-	private static final String url = "jdbc:mysql://182.92.116.152:3306/FileStorage";
-	private static final String user = "root";
-	private static final String password = "12345678";
+	private static final String url = "**********";
+	private static final String user = "****";
+	private static final String password = "**************";
 	private Connection conn = null;
 	
 	static {
