@@ -20,8 +20,8 @@ public class RegisterServlet extends HttpServlet {
 		String password = request.getParameter("password1");
 		String authCode = request.getParameter("invitecode");
 		
-		// 授权码：starfish
-		if(!authCode.equals("starfish")) {
+		// 授权码：你觉得我会在这里告诉你？
+		if(!authCode.equals("***********")) {
 			out.println("<script>alert('授权码错误，注册失败'); window.location='/FileStorage/login.html';</script>");
 		}
 		
