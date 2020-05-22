@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+ 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+ 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+ 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<title>登录</title>
+</head>
+<body style="background-color:#4e73df">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4" id="login-block" align="center">
+				<form class="form-signin" name="frm" action="login" method="post">
+					<h3 class="form-signin-header">用户登录</h3>
+					<table>
+						<tr><td><input type="text" name="username" class="form-control" placeholder="用户名"></td></tr>
+						<tr><td><input type="password" name="password" class="form-control" placeholder="密码"></td></tr>
+					</table>
+					<button class="btn btn-warning" type="reset">重置</button>
+					<button class="btn btn-info" type="submit" onclick="return check()">登录</button>
+				</form>
+				<p>新用户？点击<a href="#" data-toggle="modal" data-target="#register-modal">这里</a>注册</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 弹出注册框，bootstrap的模态框 -->
+	<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" >
+  		<div class="modal-dialog modal-md" role="document">
+    		<div class="modal-content">
+      			<div class="modal-header">
+      				<h4 class="modal-title">用户注册</h4>
+      			</div>
+      			<div class="modal-body" align="center">
+      				<form action="register" method="post" name="reg">
+      					<input class="form-control" type="text" name="username" placeholder="用户名">
+      					<input class="form-control" type="password" name="password1" placeholder="密码">
+      					<input class="form-control" type="password" name="password2" placeholder="确认密码">
+      					<input class="form-control" type="text" name="invitecode" placeholder="授权码">
+      					
+      					<button class="btn btn-info" type="submit" onclick="return checkRegister()">注册</button>
+      				</form>
+      			</div>
+      				
+      			<div class="modal-footer" align="center">
+      				<a href="#" data-dismiss="modal">取消</a>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+</body>
+<script>
+function check(){
+	if(frm.username.value == ""){
+		alert("用户名不能为空");
+		frm.username.focus();
+		return false;
+	}
+	if(frm.password.value == ""){
+		alert("密码不能为空");
+		frm.password.focus();
+		return false;
+	}
+	return true;
+}
+function checkRegister(){
+		if(reg.username.value == ""){
+			alert("用户名不能为空");
+			reg.username.focus();
+			return false;
+		}
+		if(reg.username.value.length > 10){
+			alert("请输入10个字符一下的用户名");
+			reg.username.focus();
+			return false;
+		}
+		if(reg.password1.value != reg.password2.value){
+			alert("两次输入密码不同");
+			return false;
+		}
+		if(reg.password1.value=="" || reg.password2.value==""){
+			alert("请填写密码");
+			return false;
+		}
+		return true;
+	}
+
+</script>
+
+<style>
+.form-control{margin-bottom:20px;}
+#login-block{margin-top:100px; border-radius:30px 30px 30px 30px; background-color:white;}
+</style>
+</html>
