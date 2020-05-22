@@ -1,2 +1,7 @@
-# FileStorage
-Web based File Storage application, now user can only access by browser, we are also looking forward to make an mobile app(wechat app)
+# 个人网络存储
+基于web的网络存储应用，现在只提供浏览器访问的页面，我们也准备开发出与web端同步的手机app（微信小程序）。
+
+网站地址和注册授权码请联系开发者获取
+
+Update：
+  2020.5.22：当前版本每个用户拥有500MB空间，仅支持文件上传、下载、删除。分享功能将在后期更新提供。
