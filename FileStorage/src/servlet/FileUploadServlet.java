@@ -57,7 +57,7 @@ public class FileUploadServlet extends HttpServlet {
 					}
 					else {
 						String uploadDate = LocalDate.now().toString();
-						String url = "http://182.92.116.152:8080/storage/" + username + "/" + filename;
+						String url = "文件服务器地址" + username + "/" + filename;
 					
 						// 上传文件到服务器
 						item.write(file);
